@@ -1,0 +1,20 @@
+Shieldcrusher Viking,Pirate,5,7,5
+Zombot Dinotronic Mechasaur,Science,7,6,7
+Zombot 1000,Science,9,9,9
+Octo Zombie,Pet,8,8,8
+Binary Stars,Dancing,5,3,3
+Valkyrie,History,4,0,6
+Undying Pharaoh,History,6,4,6
+Intergalactic Warlord,Pirate,5,2,2
+Cryo-Yeti,Monster,5,3,4
+Zombot Plank Walker,Pirate,8,6,6
+Brainana,Banana,6,4,3
+Dark Matter Dragonfruit,Dragon,8,6,6
+Cornucopia,Fruit,10,6,6
+Cop Cannon,Corn,6,6,6
+Gatling Pea,Pea,5,5,4
+Captain Cucumber,Fruit,3,1,4
+Gloom-Shroom,Mushroom,5,5,5
+Karnel Corn,Corn,8,6,6
+Soul Patch,Root,7,5,10
+Tricarrotops,Root,2,1,3
