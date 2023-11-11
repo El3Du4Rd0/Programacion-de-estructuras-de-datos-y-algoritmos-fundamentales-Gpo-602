@@ -1,76 +1,144 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include <fstream>
 
-#include "Funciones.h"
+#include "heap.h"
 
 // estrctura de datos donde se defines los valores que puede tener una carta
-struct carta{
-  std::string nomb, tipo;
+struct Carta{
+  std::string nomb;
   int cost, ataq, vida;
+  int bandera;
+
+  Carta() : nomb(""), cost(0), ataq(0), vida(0) , bandera(0) {}
+  Carta(std::string n, int c, int a, int v) : nomb(n), cost(c), ataq(a), vida(v), bandera(0) {}
+  Carta(std::string n, int c, int a, int v, int b) : nomb(n), cost(c), ataq(a), vida(v), bandera(b) {}
+
+  bool menor_cost(const Carta &c) { return c.cost < this->cost; }
+  bool mayor_cost(const Carta &c) { return c.cost > this->cost; }
+  bool menor_ataque(const Carta &c) { return c.ataq < this->ataq; }
+  bool mayor_ataque(const Carta &c) { return c.ataq > this->ataq; }
+  bool menor_vida(const Carta &c) { return c.vida < this->vida; }
+  bool mayor_vida(const Carta &c) { return c.vida > this->vida; }
+
+  bool operator < (const Carta &c) {
+    if (bandera == 0){
+      return mayor_cost(c);
+    } else if (bandera == 1){
+      return mayor_ataque(c);
+    } else if (bandera == 2){
+      return mayor_vida(c);
+    } else if (bandera == 3){
+      return c.nomb > this->nomb;
+    }
+  }
+
+  bool operator > (const Carta &c) {
+    if (bandera == 0){
+      return menor_cost(c);
+    } else if (bandera == 1){
+      return menor_ataque(c);
+    } else if (bandera == 2){
+      return menor_vida(c);
+    } else if (bandera == 3){
+      return c.nomb < this->nomb;
+    }
+  }
 };
 
-void mostrar(std::vector<struct carta> vec){
-  for ( carta carta_ : vec ){
-    std::cout << carta_.nomb << " - " << carta_.tipo << '\n' << '\t'
-    << carta_.cost << "/" << carta_.ataq << "/" << carta_.vida << '\n';
-  }
-}
+void leer(Heap<Carta> &H, int orden) {
+  std::ifstream arch("lista_cartas.txt");
 
-int main(){
-  // Se lee el archivo
-  std::ifstream archivo("lista_cartas.txt");
-
-  // definimos variables y vector principal  
+  // se crean variables tipo int y string para la posicion de las comas y la linea de lectura
+  int coma_1, coma_2, coma_3;
   std::string linea;
-  std::vector<struct carta> vec_cartas;
-  int coma_1, coma_2, coma_3, coma_4;
 
   // while que se ejecuta hasta que ya no se lean lineas en el archivo txt
-  while (getline(archivo, linea)){
+  while(getline(arch, linea)){
 
     // se define el valor de las comas segun su posicion en la linea de texto
     coma_1 = linea.find(",");
     coma_2 = linea.find(",", coma_1 + 1);
     coma_3 = linea.find(",", coma_2 + 1);
-    coma_4 = linea.find(",", coma_3 + 1);
 
-    /*
-    Se agrega un valor de la estructura de datos carta al vector de cartas. Los
-    valores se buscan justo despues de la coma correspondiente en el archivo de 
-    texto y toman los caracteres justos para obtener el dato solicitado.
-    */
-
-    vec_cartas.push_back(carta{
-      nomb : linea.substr(0, coma_1),
-      tipo : linea.substr(coma_1 + 1, coma_2 - coma_1 - 1),
-      cost : std::stoi(linea.substr(coma_2 + 1, coma_2 - coma_3 - 1)),
-      ataq : std::stoi(linea.substr(coma_3 + 1, coma_2 - coma_4 - 1)),
-      vida : std::stoi(linea.substr(coma_4+1))
-    });
+    H.push(Carta(
+      linea.substr(0, coma_1),
+      std::stoi(linea.substr(coma_1 + 1, coma_2 - coma_1 - 1)),
+      std::stoi(linea.substr(coma_2 + 1, coma_3 - coma_2 - 1)),
+      std::stoi(linea.substr(coma_3 + 1)), orden
+    ));
   }
 
-  Funciones<struct carta> fun;
-  
-  std::cout << '\n' << "Orden por coste de mana" << '\n' << '\n';
-  fun.sort_cost(vec_cartas);
-  mostrar(vec_cartas);
+  arch.close();
+}
 
-  std::cout << '\n' << "Orden por puntos de ataque" << '\n' << '\n';
-  fun.sort_ataq(vec_cartas);
-  mostrar(vec_cartas);
+void escribir(Carta &c){
+  std::ofstream arch("lista_cartas.txt", std::ios::app);
 
-  std::cout << '\n' << "Orden por puntos de vida" << '\n' << '\n';
-  fun.sort_vida(vec_cartas);
-  mostrar(vec_cartas);
-  
-  std::cout << '\n' << "Busqueda de cartas" << '\n' << '\n';
-  std::vector<struct carta> vec_busqueda;
-  vec_busqueda.push_back(fun.search_cost(vec_cartas, 2));
-  vec_busqueda.push_back(fun.search_ataq(vec_cartas, 9));
-  vec_busqueda.push_back(fun.search_vida(vec_cartas, 10));
-  mostrar(vec_busqueda);
+  arch << '\n' << c.nomb << ',' << c.cost << ',' << c.ataq << ',' << c.vida;
+
+  arch.close();
+}
+
+int main(){
+  // se crea un objeto heap de tipo carta
+  Heap<Carta> heap(200);
+
+  bool bandera; bandera = true;
+
+  while(bandera){
+    std::cout << "que quieres hacer? " << std::endl
+      << "1. Agregar cartas" << std::endl 
+      << "2. Extraer heap de cartas" << std::endl;
+
+    int aux; std::cin >> aux;
+
+    switch (aux) {
+      case 1:
+      {
+        std::string nom;
+        int c, a, v;
+
+        std::cout << "¿Cuantas cartas quieres agregar?" << '\n';
+        int cantidad; std::cin >> cantidad;
+
+        for(int i = 0; i < cantidad; i++){
+          std::cout << "Nombre: "; std::cin >> nom;
+          std::cout << "Coste: "; std::cin >> c;
+          std::cout << "Ataque: "; std::cin >> a;
+          std::cout << "Vida: "; std::cin >> v;
+
+          Carta nueva_carta(nom,c,a,v);
+          escribir(nueva_carta);
+        }
+      }
+        break;
+      case 2:
+      {
+        std::cout << "En que orden quieres mostrar las cartas:" << '\n'
+        << "0. Coste." << '\n'
+        << "1. Ataque." << '\n'
+        << "2. Vida." << '\n'
+        << "3. Nombre." << '\n';
+
+        int aux; std::cin >> aux;
+        leer(heap, aux);
+
+        while (!heap.empty()) {
+          Carta carta = heap.top();
+          std::cout << "Nombre: " << carta.nomb << '\n' << '\t'
+            << "- Coste: " << carta.cost << ", Ataque: " << carta.ataq 
+            << ", Vida: " << carta.vida << '\n' << '\n';
+          heap.pop();
+        }
+      }
+        break;
+      default:
+
+        bandera = false;
+        break;
+    }
+  }
 
   return 0;
 }

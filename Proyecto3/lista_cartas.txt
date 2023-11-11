@@ -1,20 +1,151 @@
-Shieldcrusher Viking,Pirate,5,7,5
-Zombot Dinotronic Mechasaur,Science,7,6,7
-Zombot 1000,Science,9,9,9
-Octo Zombie,Pet,8,8,8
-Binary Stars,Dancing,5,3,3
-Valkyrie,History,4,0,6
-Undying Pharaoh,History,6,4,6
-Intergalactic Warlord,Pirate,5,2,2
-Cryo-Yeti,Monster,5,3,4
-Zombot Plank Walker,Pirate,8,6,6
-Brainana,Banana,6,4,3
-Dark Matter Dragonfruit,Dragon,8,6,6
-Cornucopia,Fruit,10,6,6
-Cop Cannon,Corn,6,6,6
-Gatling Pea,Pea,5,5,4
-Captain Cucumber,Fruit,3,1,4
-Gloom-Shroom,Mushroom,5,5,5
-Karnel Corn,Corn,8,6,6
-Soul Patch,Root,7,5,10
-Tricarrotops,Root,2,1,3
+Potato mine,1,0,1
+Cactus,2,1,5
+Jugger-nut,2,2,2
+Sea-Shroom,2,2,2
+Water Chestnut,2,0,8
+Hibernating Beary,3,0,8
+Pea-nut,3,2,4
+Steel Magnolia,3,2,2
+Guacodile,4,4,3
+Mirror nut,4,0,8
+Prickly Pear,4,0,4
+Smackadamia,5,4,4
+Tough Beets,5,6,1
+Poppin' poppies,6,4,4
+Soul Patch,7,5,10
+Poison Mushroom,1,1,1
+Shroom for two,1,1,1
+Wild berry,2,4,1
+Mushroom ringleader,3,0,1
+Poison Ivy,3,1,5
+Punish-Shroom,3,2,2
+Pair of pears,4,2,2
+Pineclone,4,3,3
+Sergeant strongberry,4,4,3
+Sour grapes,4,2,2
+Bluesberry,5,3,3
+Dandy lion king,6,4,4
+Poison oak,6,4,5
+Grapes of wrath,7,6,6
+Kernel corn,8,6,6
+Bonk Choy,1,2,1
+Party Thyme,1,2,2
+Pea pod,1,1,1
+Sweet potato,1,0,3
+Black-eyed pea,2,2,3
+Doubled mint,2,1,2
+Fire peashooter,2,3,2
+Muscle sprout,3,3,2
+The podfather,3,2,2
+Bananasaurus rex,4,3,3
+Re-peat moss,4,2,3
+Skyshooter,4,3,2
+Potted powerhouse,5,3,3
+Whipvive,5,5,5
+Super-phat beets,6,3,3
+Admiral navy bean,1,1,1
+Shellery,1,2,1
+Lightning reed,2,1,2
+Chilly pepper,3,2,1
+Rescue radish,3,3,4
+Vanilla,3,3,3
+Bean counter,4,2,2
+Carrotillery,4,5,2
+Navy bean,4,2,2
+Snapdragon,4,3,3
+Winter squash,4,2,6
+Jumping bean,5,3,2
+Brainana,6,4,3
+Winter melon,6,4,5
+The great Zucchini,9,7,7
+Morning glory,1,2,2
+Fume-shroom,2,2,1
+Pepper M.D.,2,2,2
+Sage sage,2,2,1
+Twin sunflower,2,0,2
+Magnifyting grass,3,0,1
+Venus Flytrap,3,2,2
+Bloomerang,4,3,3
+Chomper,4,2,2
+Metal petal sunflower,4,3,4
+Briar rose,5,3,4
+Power flower,5,3,5
+Laser bean,6,5,7
+Three-headed chomper,6,6,6
+Cornucopia,10,6,6
+Cat lady,1,0,4
+Dog walker,1,2,2
+Snorkel zombie,1,2,1
+Haunting zombie,2,2,1
+Squirrel herder,2,2,2
+Loudmouth,3,1,1
+Vimpire,3,2,3
+Zombie yeti,3,3,3
+Kangaroo rider,4,4,3
+Smashing gargantuar,5,5,5
+Deep sea gargantuar,6,7,8
+Nurse gargantuar,7,6,6
+Octo zombie,8,8,8
+Zombot 1000,9,9,9
+Chimney sweep,1,2,1
+Cell phone zombie,2,1,1
+Pool shark,2,3,1
+Zombot drone engineer,2,1,4
+Brain vendor,3,2,1
+Electrician,3,2,2
+Gentleman zombie,3,2,2
+Kite flyer,3,1,3
+Mad chemist,4,3,5
+Mountain climber,4,2,2
+Gadget scientist,5,2,3
+Portal Technician,5,4,4
+Shieldcrusher viking,5,7,5
+Wizzar gargantuar,6,6,7
+Trickster,10,6,6
+Tenis champ,1,1,1
+Unlife of the party,1,1,1
+Aerobics instructor,2,2,3
+Barrel of deadbeards,2,0,1
+Conga zombie,2,2,2
+Newspaper zombie,2,1,4
+Abracadaver,3,3,2
+Exploting imp,3,6,1
+Fireworks zombie,3,3,4
+Jester,3,1,5
+Orchestra conductor,4,0,2
+Valkyrie,4,0,6
+Foot soldier zombie,5,3,4
+Imp-throwing gargantuar,5,5,5
+Disco-tron 3000,6,4,4
+Arm wrestler,1,2,2
+Flag zombie,2,1,3
+Sumo wrestler,2,2,3
+Landscaper,3,2,2
+Trash can zombie,3,2,3
+Buckethead,4,3,4
+Zombie coach,4,3,3
+Zombie king,4,3,5
+All-star zombie,5,4,6
+Coffee zombie,6,4,3
+Ra zombie,6,3,4
+Undying Pharaoh,6,4,6
+Knight of the living dead,7,5,5
+Rodeo gargantuar,7,5,9
+Wannabe hero,7,6,1
+Headstone carver,1,1,3
+Zombie chicken,1,2,2
+Hot dog imp,2,2,2
+Swashbuckler zombie,2,2,2
+Toxic waste imp,2,2,2
+Imp commander,3,2,4
+Line dancing zombie,3,3,1
+Stealthy imp,3,2,2
+Barrel roller zombie,4,3,3
+Firefighter,4,4,5
+Pogo bouncer,4,2,2
+Tomb raiser zombie,4,3,4
+Mixed-up gravedigger,5,5,5
+Surprise gargantuar,5,5,6
+Walrus rider,5,3,4
+Zombot sharktronic sub,6,5,5
+Zombot plank walker,8,6,6
