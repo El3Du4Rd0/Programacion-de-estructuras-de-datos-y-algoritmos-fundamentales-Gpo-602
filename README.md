@@ -12,11 +12,10 @@ nuevas cartas tanto a la estructura de datos como a al archivo txt.
 - Hace un análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa.
 
 Análisis de comlplejidad:
-- Caso con variables de tipo int: Heapify O(n log n)
-- Caso con variables de tipo string: Heapify O(n * m log n * m) donde m son los caracteres que son iguales entre los strings
-- Caso con variables de tipo int: Push O(n)
+- Caso con variables de tipo int: Heapify & Heapsort O(n log n) cuando tienes que acomodar todo el mosticulo desde la base
+- Caso con variables de tipo string: Heapify & Heapsort O(n * m log n * m) donde m son los caracteres que son iguales entre los strings
+- Caso con variables de tipo int: Push O(n) ya que tiene un ciclo while
 - Caso con variables de tipo string: Push O(n * m) donde m son los caracteres que son iguales entre los strings
-- Pop O(1)
 
 ### SICT0302 Toma decisiones
 
