@@ -81,9 +81,9 @@ void Heap<T>::heapify( unsigned int pos){
     unsigned int small = pos;
     unsigned int lef = left(pos);
     unsigned int rig = right(pos);
-    if( lef <= count && data[lef] < data[small])
+    if( lef <= count && data[lef] > data[small])
         small = lef;
-    if( rig <= count && data[rig] < data[small])
+    if( rig <= count && data[rig] > data[small])
         small = rig;
     if( small != pos) {
         swap(pos, small);

@@ -89,7 +89,8 @@ int main(){
   while(bandera){
     std::cout << "que quieres hacer? " << std::endl
       << "1. Agregar cartas" << std::endl 
-      << "2. Extraer heap de cartas" << std::endl;
+      << "2. Extraer heap de cartas ascendente" << std::endl
+      << "3. Extraer heap de cartas descendente" << std::endl;
 
     int aux; std::cin >> aux;
 
@@ -115,7 +116,7 @@ int main(){
         break;
       case 2:
       {
-        std::cout << "En que orden quieres mostrar las cartas:" << '\n'
+        std::cout << "Sobre que quieres mostrar las cartas:" << '\n'
         << "0. Coste." << '\n'
         << "1. Ataque." << '\n'
         << "2. Vida." << '\n'
@@ -133,8 +134,28 @@ int main(){
         }
       }
         break;
-      default:
+      case 3:
+        std::cout << "Sobre que quieres mostrar las cartas:" << '\n'
+        << "0. Coste." << '\n'
+        << "1. Ataque." << '\n'
+        << "2. Vida." << '\n'
+        << "3. Nombre." << '\n';
 
+        int aux; std::cin >> aux;
+        leer(heap, aux);
+
+        heap.heapsort();
+
+        while (!heap.empty()) {
+          Carta carta = heap.top();
+          std::cout << "Nombre: " << carta.nomb << '\n' << '\t'
+            << "- Coste: " << carta.cost << ", Ataque: " << carta.ataq 
+            << ", Vida: " << carta.vida << '\n' << '\n';
+          heap.pop();
+        }
+
+      break;
+      default:
         bandera = false;
         break;
     }
